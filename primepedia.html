@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+<meta name="description" content="Prime Pedia adalah toko digital andalan untuk kebutuhan gamer seperti hosting, top up game, desain, dan berbagai layanan digital berkualitas dengan harga terjangkau.">
+<meta name="keywords" content="Prime Pedia, toko digital, hosting game, top up game, desain banner, plugin, domain murah, jasa digital, QRIS tanpa KTP, joki game, membership game, reseller panel">
+<meta name="author" content="Prime Pedia Team">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://primepedia.vercel.app"> <!-- Ganti dengan URL asli -->
+<meta property="og:title" content="Prime Pedia - Store Andalan Kita Semua">
+<meta property="og:description" content="Toko digital terbaik untuk kebutuhan gaming dan desain. Hosting, akun, plugin, domain, dan layanan lainnya dengan harga bersahabat.">
+<meta property="og:image" content="https://i.ibb.co.com/bRyT5sMF/IMG-20250411-WA0342-1.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://primepedia.vercel.app"> <!-- Ganti dengan URL asli -->
+<meta name="twitter:title" content="Prime Pedia - Store Andalan Kita Semua">
+<meta name="twitter:description" content="Toko digital terbaik untuk kebutuhan gaming dan desain. Hosting, akun, plugin, domain, dan layanan lainnya dengan harga bersahabat.">
+<meta name="twitter:image" content="https://i.ibb.co.com/bRyT5sMF/IMG-20250411-WA0342-1.jpg">
+    <title>Prime Pedia - Store Andalan Kita semua</title>
+    <style>
+        /* Reset dan variabel */
+        :root {
+            --primary-blue: #0092b9;
+            --secondary-blue: #006d8c;
+            --accent-blue: #00c0f5;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --dark: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo img {
+            height: 45px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-icons a {
+            margin-left: 20px;
+            color: var(--dark);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-icons i {
+            font-size: 1.3rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-blue);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .hero-btn {
+            padding: 12px 30px;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Kategori Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            flex: 0 0 calc(25% - 30px);
+            min-width: 200px;
+            max-width: 300px;
+            height: 180px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+
+        .category-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-title {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* Produk Featured */
+        .products {
+            padding: 0 5%;
+            margin-bottom: 80px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        .product-img-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .product-action {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .btn-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            border: none;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-icon:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        /* Testimonial */
+        .testimonials {
+            background-color: #0092b9;
+            padding: 80px 5%;
+        }
+
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary-blue);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary-blue);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 60px 5%;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .newsletter h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            padding: 0 25px;
+            background-color: var(--dark);
+            color: var(--white);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-about {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #aaa;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #aaa;
+        }
+
+        .footer-contact-icon {
+            margin-right: 10px;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animasi */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Responsif */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .category-card {
+                flex: 0 0 calc(33.33% - 30px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 15px 3%;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 75px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .category-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-btn {
+                border-radius: 5px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .category-card {
+                flex: 0 0 100%;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        html {
+  scroll-behavior: smooth;
+}
+
+      
+
+    
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Header & Navigasi -->
+    <header>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://i.ibb.co.com/bRyT5sMF/IMG-20250411-WA0342-1.jpg" alt="Prime Pedia Logo">
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#produk">Produk Terbaru</a></li>
+            <li><a href="#newsletter">kontak</a></li>
+            
+        </ul>
+        <div class="mobile-menu" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+    <!-- Hero Section --><section class="hero" id="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Prime Pedia</h1>
+        <p class="hero-subtitle">
+            Halo gamer! Lagi cari tempat buat beli kebutuhan game kayak hosting, akun, dan lainnya? 
+            <strong>Prime Pedia</strong> solusinya! Produk berkualitas, harga bersahabat, kualitas bukan kaleng-kaleng!
+        </p>
+        <a href="#produk" class="hero-btn">Jelajahi Sekarang</a>
+    </div>
+
+
+</section>
+
+
+  
+
+
+
+<section class="products">
+<section id="produk">
+    <h2 class="section-title">Produk Unggulan</h2>
+    <div class="product-grid">
+
+    <!-- Banner YouTube -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgTbM4gF6dttyV_3onv8lJAzm5LtVals5d5nUffxNilMi8m5UJEwXD7uU&s=10" alt="Banner YouTube" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Desain Banner YouTube</h3>
+    <div class="product-price">Rp 10.000</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">Pesan</button>
+    </div>
+  </div>
+</div>
+
+<!-- Membership Game -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRXJu-mEyf_TcsqGWZZaOJMK1hX3SoQI6A0TGZeyWcQA&s" alt="Membership Game" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Membership All Game</h3>
+    <div class="product-price">Via PM</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">PM Sekarang</button>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Joki Game -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr-_q89sno5aye478DtA_pH3acB6dNZ3o1qg&usqp=CAU" alt="Joki Game" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Joki Game All Game</h3>
+    <div class="product-price">Via PM</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">PM Sekarang</button>
+    </div>
+  </div>
+</div>
+
+<!-- Domain + Plugin -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://images.bukaolshop.com/2025-02/190579/9fa8b27779072.jpg" alt="Domain dan Plugin" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Domain & Plugin Premium</h3>
+    <div class="product-price">Via PM</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">PM Sekarang</button>
+    </div>
+  </div>
+</div>
+
+<!-- Own Panel Reseller -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaedHanZfiYRkzJ-d0YwkW_i_df-SbLMonkGoMvWok_g&s" alt="Reseller Panel" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">Own Panel / Reseller</h3>
+    <div class="product-price">Via PM</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">PM Sekarang</button>
+    </div>
+  </div>
+</div>
+
+<!-- APK Suntik WA -->
+<div class="product-card">
+  <div class="product-img-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchDCFuMaMBG1WqK49bPBy98bTzfqn5l0YWPm7RV3fqA&s" alt="APK Suntik" class="product-img">
+  </div>
+  <div class="product-info">
+    <h3 class="product-name">APK Suntik / WA Badak</h3>
+    <div class="product-price">Via PM</div>
+    <div class="product-action">
+      <button class="btn btn-primary btn-wa">PM Sekarang</button>
+    </div>
+  </div>
+</div>
+    
+    
+
+
+        <!-- Hosting Minecraft -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsfUoHMu-MPmrw6R89miWLY424ShDDhCtBdmm3ryNriw&s" alt="Hosting Minecraft" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Hosting Minecraft </h3>
+                <div class="product-price">Rp 10.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Up All Game -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4eWONCPd7zcLEFb0oA3MNujqXWIU60fizqAL4jVf2vQ&s" alt="Top Up Game" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Top Up All Game</h3>
+                <div class="product-price">Rp 5.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">PM Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo Server -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi0qTyH0nm0t0c9yNC_2qpJp9fK1Fg2_1Qh9ltMWWQjQ&s" alt="Logo Server" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Jasa Desain Logo Server</h3>
+                <div class="product-price">Rp 5.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Pesan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jasa Render Logo -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRIG7ZOWmypP28IMA7oJ6SdgLrp5oCowhGW7XPhTnTSg&s" alt="Render Logo" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Jasa Render Logo</h3>
+                <div class="product-price">Rp 10.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Pesan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suntik Follower -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkTdUPfmG1lTTad3jqaZs_0ty878gafCDgigNCe2FYKQ&s" alt="Suntik Followers" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Suntik Followers</h3>
+                <div class="product-price">Rp 1.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QRIS All Pay -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkrYFoCpfcDCPtQaeUU8z2-zTVjPFewjIQeTPXRrZuoA&s" alt="QRIS All Pay" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">QRIS All Pay Tanpa KTP</h3>
+                <div class="product-price">Rp 10.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- VPS Digital Ocean -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDtwyjXi-KcbWNKFnUdGsBk_QMrqw0wDEbNcBF1HtUhw&s" alt="VPS DO" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">VPS Digital Ocean</h3>
+                <div class="product-price">Rp 20.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">PM Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jasa Backup Server -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0mVCM3YqlyAtzmUWp7PfcSUUxbPGOiEy1DU1Obdxeg&s" alt="Backup Server" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Jasa Backup Server</h3>
+                <div class="product-price">Rp 5.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel Bot -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwHQMct0F05KUqMvCLvWWAQTyjcMr1JLJRb5AAT7RNw&s" alt="Panel Run Bot" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">Panel Run Bot</h3>
+                <div class="product-price">Rp 5.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Order</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SC Perstore -->
+        <div class="product-card">
+            <div class="product-img-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXlQx2Kf8MsM7OuRUdJ7f09-LxdpSKCpaT_2FtZB2g5g&s" alt="SC Perstore" class="product-img">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">SC Perstore MD V1</h3>
+                <div class="product-price">Rp 10.000</div>
+                <div class="product-action">
+                    <button class="btn btn-primary btn-wa">Beli</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <h2 class="section-title" style="color: #fff;">Testimoni Pelanggan</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7Dc7ZUIjsAwSbV7i2K88DWAo6ieCwGtsnY-95yRlXg&s" alt="Customer" class="testimonial-avatar">
+                        <p class="testimonial-text">"saya membeli hosting seharga 100k untuk server saya ldz network dan member saya tidak memgaluh kan lag malah mereka sangat senang karena render yg cepat dan tidak delay"</p>
+                        <div class="testimonial-author">Shes</div>
+                        <div class="testimonial-role">Pelanggan setia</div>
+                    </div>
+                </div>
+
+            </div>
+       
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <h2>Hubungi kami</h2>
+        <p>Ada pertanyaan? hubungi kami disini</p>
+        <form class="newsletter-form">
+            <input type="pesan" class="newsletter-input" placeholder="pesan">
+            <button type="submit" class="newsletter-btn">kirim</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+<footer>
+        <div class="footer-container">
+            <div class="footer-col">
+
+                <p class="footer-about">Halo gamer! Lagi cari tempat buat beli kebutuhan game kayak hosting, akun, dan lainnya? 
+            <strong>Prime Pedia</strong> solusinya! Produk berkualitas, harga bersahabat, kualitas bukan kaleng-kaleng!</p>
+                <div class="footer-social">
+                    <a href="https://chat.whatsapp.com/G4l2Enh9VfAK12q8ge0bPV"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://whatsapp.com/channel/0029Vb5BFXX3gvWatjYZBU3q"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Kategori</h3>
+                        <ul class="footer-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#produk">Produk Terbaru</a></li>
+            <li><a href="#newsletter">kontak</a></li>
+            
+        </ul>
+                    </div>
+                    </div>
+                    </footer>
+                      
+                 
+  
+
+    
+
+<!-- Popup Form -->
+
+<script>
+  document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Mencegah form kirim biasa
+    const pesan = document.querySelector('.newsletter-input').value.trim();
+    const nomorWA = '62895342632070'; // Ganti dengan nomor WhatsApp tujuan
+
+    if (pesan === '') {
+      alert('Pesan tidak boleh kosong!');
+      return;
+    }
+
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, '_blank'); // Buka WhatsApp dengan pesan
+  });
+</script>
+<script>
+  
+  
+  
+  const tokoWa = "62895342632070"; // ganti dengan nomor WA toko kamu tanpa tanda "+"
+  const tombolWA = document.querySelectorAll('.btn-wa');
+
+  tombolWA.forEach(tombol => {
+    tombol.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const productCard = this.closest('.product-card');
+      const namaProduk = productCard.querySelector('.product-name')?.innerText || 'Produk';
+      const hargaProduk = productCard.querySelector('.product-price')?.innerText || 'Harga belum tersedia';
+
+      const pesan = `Halo, saya ingin pesan:\n\n*Produk:* ${namaProduk}\n*Harga:* ${hargaProduk}\n\nNama:\nAlamat:\nCatatan:`;
+      const encodedPesan = encodeURIComponent(pesan);
+      const waLink = `https://wa.me/${tokoWa}?text=${encodedPesan}`;
+
+      window.open(waLink, '_blank');
+    });
+  });
+</script>
+                 
+                 
+                      
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+const navLinksItems = document.querySelectorAll('#navLinks a'); // Get all links inside #navLinks
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+navLinksItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active'); // Close the navbar
+  });
+});
+</script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles", {
+        "particles": {
+            "number": {
+                "value": 60,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle"
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": true
+            },
+            "size": {
+                "value": 3,
+                "random": true
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+
+</body>
+</html>
